@@ -1,9 +1,11 @@
 using Downloads: download
 
+# session_cookie in Chrome: View --> Developer --> Developer tools --> Application tab --> (left) Storage / Cookies --> `session` cookie
 session_cookie = read("session_cookie.txt", String)
 
-for year in 2015:2021
-    path = joinpath(@__DIR__, "data", "$year")
+# for year in 2015:2021
+for year in 2022
+        path = joinpath(@__DIR__, "data", "$year")
     mkpath(path)
     for day in 1:25
         url = "https://adventofcode.com/$(year)/day/$(day)/input"
